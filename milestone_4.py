@@ -28,7 +28,10 @@ class Hangman:
 
 
             else:
-                print("Sorry, " + guess + "is not in the word. Try again.")
+                print("Sorry, " + guess + "is not in the word.")
+                self.num_lives -= 1
+                print("You have " + str(self.num_lives) + " left")
+            self.list_of_guesses.append(guess)
 
     def ask_for_input(self):
         valid = False

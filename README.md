@@ -11,3 +11,4 @@ the terminal cmds i have used for this is your basic ``` git add .``` ```git com
 
 i have now introduced functions into my code and copied the existing code i had into them. this allows me to keep my variables seperate and not accidently use the incorrect variables later on in my code. automatically calls the functions when the code is run.
 
+i created a class and within that class initialised the variables needed once the class starts up. this means that i can avoid errors like trying to access a variable that doesnt exist yet. i added my previous functions as methods of this class.
