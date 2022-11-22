@@ -18,3 +18,4 @@ i also used it to ensure i was enforcing the rules correctly
 
 finally, i have placed all my code into a class and added the final function to control the logic of the game. i also use a few checks, such as if the user has used all guesses, if the user has guessed all letters.
 i placed the play_game function outside of the class so it could be imported as a module of a hangman game for others to quickly access
+the class also means i can technically have multiple hangmen game instances all at once, which is a good use of multitasking since i dont have to quit the current for a new game
