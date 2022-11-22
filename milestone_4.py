@@ -33,20 +33,15 @@ class Hangman:
             self.list_of_guesses.append(guess)
 
     def ask_for_input(self):
-        valid = False
         guess = input("Guess a letter. ")
-
-        while not valid:
-            if len(guess) == 1:
-                if guess.isalpha():
-                    print("Good guess")
-                    valid = True
+        while True:
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
             else:
-                print("Invalid letter. Please, enter a single alphabetical character.")
-
-        self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                self.check_guess(guess)
 
 
 
