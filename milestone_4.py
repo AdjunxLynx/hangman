@@ -20,16 +20,14 @@ class Hangman:
     def check_guess(self, guess):
         guess = guess.lower()
         correct = False
-        while not correct:
+        while True:
             if guess in self.word:
                 print("Good guess! " + guess + " is in the word.")
-                correct = True
                 for i in range(len(self.word)):
                     if guess == self.word[i]:
                         self.word_guessed[i] = str(guess)
                 print(self.word_guessed)
-
-
+                break
             else:
                 print("Sorry, " + guess + "is not in the word.")
                 self.num_lives -= 1
