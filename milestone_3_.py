@@ -1,6 +1,5 @@
 import random
 word_list = ["banana", "apple", "strawberry", "pineapple", "plum"]
-
 word = random.choice(word_list)
 
 def check_guess(guess):
