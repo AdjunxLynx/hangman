@@ -1,21 +1,30 @@
 import random
-correct = False
 word_list = ["banana", "apple", "strawberry", "pineapple", "plum"]
 
 word = random.choice(word_list)
-while not correct:
-    guess = input("Guess a letter. ")
-    if len(guess) == 1:
-        if guess.isalpha():
-            print("Good guess")
+
+def check_guess(guess):
+    guess = guess.lower()
+    correct = False
+    while not correct:
+        if guess in word:
+            print("Good guess! '" + guess + "' is in the word.")
             correct = True
-    else:
-        print("Invalid letter. Please, enter a single alphabetical character.")
-        
-if guess in word:
-    print("Good guess! '" + guess + "' is in the word.")
-else:
-    print("Sorry, " + guess + "is not in the word. Try again.")
+        else:
+            print("Sorry, " + guess + "is not in the word. Try again.")
+
+def ask_for_input():
+    valid = False
+    guess = input("Guess a letter. ")
+
+    while not valid:
+        if len(guess) == 1:
+            if guess.isalpha():
+                print("Good guess")
+                valid = True
+        else:
+            print("Invalid letter. Please, enter a single alphabetical character.")
     
-def check_guess():
-    pass
+    check_guess(guess)
+    
+ask_for_input()
