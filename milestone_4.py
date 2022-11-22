@@ -5,16 +5,11 @@ class Hangman:
         self.word_guessed = []
         for i in range(len(self.word)):
             self.word_guessed.append("_")
-
-
         temp = set(self.word)
         self.num_letters = len(temp)
         self.num_lives = num_lives
         self.word_list = word_list
-
         self.list_of_guesses = []
-
-
         print(self.word_guessed)
 
     def check_guess(self, guess):
@@ -39,7 +34,6 @@ class Hangman:
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
             else:
-                self.list_of_guesses.append(guess)
                 self.check_guess(guess)
                 break
 
