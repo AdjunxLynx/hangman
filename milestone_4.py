@@ -19,14 +19,12 @@ class Hangman:
 
     def check_guess(self, guess):
         guess = guess.lower()
-        correct = False
         while True:
-            if guess in self.word:
-                print("Good guess! " + guess + " is in the word.")
+            if guess in self.word.lower():
                 for i in range(len(self.word)):
                     if guess == self.word[i]:
                         self.word_guessed[i] = str(guess)
-                print(self.word_guessed)
+                print("Good guess!" + guess + " is in the word.")
                 break
             else:
                 print("Sorry, " + guess + "is not in the word.")
