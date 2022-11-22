@@ -22,7 +22,7 @@ class Hangman:
         correct = False
         while not correct:
             if guess in self.word:
-                print("Good guess! '" + guess + "' is in the word.")
+                print("Good guess! " + guess + " is in the word.")
                 correct = True
                 for i in range(len(self.word)):
                     if guess == self.word[i]:
