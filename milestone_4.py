@@ -22,7 +22,7 @@ class Hangman:
         elif guess not in self.word.lower():
             print("Sorry, " + guess + " is not in the word.")
             self.num_lives -= 1
-            print("You have " + str(self.num_lives) + " left")
+            print("You have " + str(self.num_lives) + " lives left")
         self.list_of_guesses.append(guess)
 
     def ask_for_input(self):

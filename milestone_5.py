@@ -5,58 +5,40 @@ class Hangman:
         self.word_guessed = []
         for i in range(len(self.word)):
             self.word_guessed.append("_")
-        self.num_letters = len(set(self.word))
+        temp = set(self.word)
+        self.num_letters = len(temp)
         self.num_lives = num_lives
         self.word_list = word_list
         self.list_of_guesses = []
-        print(self.word_guessed)
+
     def check_guess(self, guess):
         guess = guess.lower()
-        correct = False
-        while not correct:
-            if guess in self.word:
-                print("Good guess! '" + guess + "' is in the word.")
-                correct = True
-                for i in range(len(self.word)):
-                    if guess == self.word[i]:
-                        self.word_guessed[i] = str(guess)
-                self.num_letters -= 1
+        if guess in self.word.lower():
+            for i in range(len(self.word)):
+                if guess == self.word[i]:
+                    self.word_guessed[i] = str(guess)
+            self.num_letters -= 1
+            print("Good guess! " + guess + " is in the word.")
+        elif guess not in self.word.lower():
+            print("Sorry, " + guess + " is not in the word.")
+            self.num_lives -= 1
+            print("You have " + str(self.num_lives) + " left")
+        self.list_of_guesses.append(guess)
 
-                print(self.word_guessed)
-            else:
-                print("Sorry, " + guess + " is not in the word.")
-                self.num_lives -= 1
-                print("You have " + str(self.num_lives) + " left")
-                break
-            self.list_of_guesses.append(guess)
     def ask_for_input(self):
-        valid = False
-        guess = input("Guess a letter. ")
-        while not valid:
-            if len(guess) == 1:
-                if guess.isalpha():
-                    print("Good guess")
-                    valid = True
-            else:
-                print("Invalid letter. Please, enter a single alphabetical character.")
-        self.check_guess(guess)
-
-    def play_game(self):
         while True:
-            if self.num_lives == 0:
-                print("You lost!")
-                break
-
-            elif self.num_letters > 0:
-                self.ask_for_input()
+            guess = input("Guess a letter. ")
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
             else:
-                print("Congratulations. You won the game!")
+                self.check_guess(guess)
                 break
 
+    def
 
 
 
-word_list = ["banana", "apple", "strawberry", "pineapple", "plum"]
-
-game = Hangman(word_list)
-game.play_game()
+h = Hangman(["asjs", "sdfhsdvuads"])
+h.check_guess("x")
