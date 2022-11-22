@@ -5,7 +5,7 @@ class Hangman:
         self.word_guessed = []
         for i in range(len(self.word)):
             self.word_guessed.append("_")
-        self.num_letters = len(self.word)
+        self.num_letters = len(set(self.word))
         self.num_lives = num_lives
         self.word_list = word_list
         self.list_of_guesses = []
@@ -20,11 +20,14 @@ class Hangman:
                 for i in range(len(self.word)):
                     if guess == self.word[i]:
                         self.word_guessed[i] = str(guess)
+                self.num_letters -= 1
+
                 print(self.word_guessed)
             else:
-                print("Sorry, " + guess + "is not in the word.")
+                print("Sorry, " + guess + " is not in the word.")
                 self.num_lives -= 1
                 print("You have " + str(self.num_lives) + " left")
+                break
             self.list_of_guesses.append(guess)
     def ask_for_input(self):
         valid = False
@@ -38,9 +41,22 @@ class Hangman:
                 print("Invalid letter. Please, enter a single alphabetical character.")
         self.check_guess(guess)
 
-    def play_game(self, word_list):
+    def play_game(self):
+        while True:
+            if self.num_lives == 0:
+                print("You lost!")
+                break
+
+            elif self.num_letters > 0:
+                self.ask_for_input()
+            else:
+                print("Congratulations. You won the game!")
+                break
 
 
 
-game = Hangman(["asjs", "sdfhsdvuads"])
-game.play_game
+
+word_list = ["banana", "apple", "strawberry", "pineapple", "plum"]
+
+game = Hangman(word_list)
+game.play_game()
