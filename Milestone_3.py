@@ -17,3 +17,5 @@ if guess in word:
 else:
     print("Sorry, " + guess + "is not in the word. Try again.")
     
+def check_guess():
+    pass
