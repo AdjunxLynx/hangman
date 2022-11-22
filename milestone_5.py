@@ -10,6 +10,7 @@ class Hangman:
         self.num_lives = num_lives
         self.word_list = word_list
         self.list_of_guesses = []
+        print(self.word_guessed)
 
     def check_guess(self, guess):
         guess = guess.lower()
