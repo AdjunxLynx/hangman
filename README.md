@@ -16,7 +16,5 @@ i created a class and within that class initialised the variables needed once th
 i used a few if and elifs to detect and make sure my input guess was clean, basically so i knew exactly what type of datatype i was working with.
 i also used it to ensure i was enforcing the rules correctly
 
-
-
 finally, i have placed all my code into a class and added the final function to control the logic of the game. i also use a few checks, such as if the user has used all guesses, if the user has guessed all letters.
-
+i placed the play_game function outside of the class so it could be imported as a module of a hangman game for others to quickly access
