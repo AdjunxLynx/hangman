@@ -26,7 +26,7 @@ class Hangman:
                         self.word_guessed[i] = str(guess)
                 print("Good guess!" + guess + " is in the word.")
                 break
-            else:
+            elif guess not in self.word.lower():
                 print("Sorry, " + guess + "is not in the word.")
                 self.num_lives -= 1
                 print("You have " + str(self.num_lives) + " left")
