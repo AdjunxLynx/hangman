@@ -5,8 +5,10 @@ class Hangman:
         self.word_guessed = []
         for i in range(len(self.word)):
             self.word_guessed.append("_")
-        self.num_letters = len(self.word)
-        self.num_lives = num_lives
+
+        self.num_letters = 0
+        temp = set(self.word)
+        self.num_lives = len(temp)
         self.word_list = word_list
 
         self.list_of_guesses = []

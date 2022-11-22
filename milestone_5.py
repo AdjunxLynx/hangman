@@ -37,5 +37,10 @@ class Hangman:
             else:
                 print("Invalid letter. Please, enter a single alphabetical character.")
         self.check_guess(guess)
-h = Hangman(["asjs", "sdfhsdvuads"])
-h.check_guess("a")
+
+    def play_game(self, word_list):
+
+
+
+game = Hangman(["asjs", "sdfhsdvuads"])
+game.play_game
