@@ -41,6 +41,8 @@ class Hangman:
                 if guess.isalpha():
                     print("Good guess")
                     valid = True
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
             else:
                 print("Invalid letter. Please, enter a single alphabetical character.")
 
