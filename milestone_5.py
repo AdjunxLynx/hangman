@@ -36,9 +36,6 @@ class Hangman:
                 self.check_guess(guess)
                 break
 
-    def play_game(self, word_list):
-
-
 
 
 h = Hangman(["asjs", "sdfhsdvuads"])
