@@ -33,8 +33,8 @@ class Hangman:
             self.list_of_guesses.append(guess)
 
     def ask_for_input(self):
-        guess = input("Guess a letter. ")
         while True:
+            guess = input("Guess a letter. ")
             if len(guess) != 1 or not guess.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
@@ -42,6 +42,7 @@ class Hangman:
             else:
                 self.list_of_guesses.append(guess)
                 self.check_guess(guess)
+                break
 
 
 
