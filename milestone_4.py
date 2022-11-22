@@ -5,7 +5,7 @@ class Hangman:
         self.word_guessed = []
         for i in range(len(self.word)):
             self.word_guessed.append("_")
-        self.num_letters = 0
+        self.num_letters = len(self.word)
         self.num_lives = num_lives
         self.word_list = word_list
 
@@ -21,6 +21,12 @@ class Hangman:
             if guess in self.word:
                 print("Good guess! '" + guess + "' is in the word.")
                 correct = True
+                for i in range(len(self.word)):
+                    if guess == self.word[i]:
+                        self.word_guessed[i] = str(guess)
+                print(self.word_guessed)
+
+
             else:
                 print("Sorry, " + guess + "is not in the word. Try again.")
 
