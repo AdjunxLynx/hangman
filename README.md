@@ -22,3 +22,7 @@ the class also means I can technically have multiple hangmen game instances all 
 
 for the logic, I needed to make sure the user hadn't used all of their guesses. I also had to make sure that all the letters hadn't been guessed.
 finally, I needed to make sure the user didn't accidentally input the same letter after it was already inputted (even if it was correct) as that would be a waste of a turn
+
+
+<img width="273" alt="image" src="https://github.com/AdjunxLynx/hangman/assets/117390288/dcfaebc9-7609-4c40-a89d-bdb118efa224">
+
